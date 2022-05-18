@@ -1,0 +1,136 @@
+<template>
+    <div class="content about" id="about">
+        <ModuleHeader :title="about.header.title" :sub-title="about.header.subtitle"/>
+        <a-row type="flex" justify="center" align="top">
+            <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
+                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/about/avatar_about.jpg"/>
+            </a-col>
+            <a-col class="color-content col" :xs="24" :sm="24" :md="24" :lg="14" :xl="16">
+                <span data-aos="fade-in" class="title color-title">{{about.header.subtitle}}</span>
+                <span data-aos="fade-in" class="brief typer black">
+                    {{about.content.name}},
+                    <!-- <vue-typer :text="about.content.desc || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
+                </span>
+                <vue-markdown data-aos="fade-in">{{about.content.md}}</vue-markdown>
+                <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
+                    <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
+                           :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                        <span class="key">{{name}}:</span>
+                        <a class="value" v-if="isUrl(value)" :href="value" target="_blank">{{simplifyUrl( value )}}</a>
+                        <span v-else>{{value}}</span>
+                    </a-col>
+                </a-row>
+            </a-col>
+        </a-row>
+    </div>
+</template>
+
+<script lang="ts">
+    import { defineComponent } from 'vue'
+    import ModuleHeader from '@/components/module/ModuleHeader.vue';
+    import ModuleSkeleton from '@/components/module/ModuleSkeleton.vue';
+    import type {Module} from '@/api/user_interface';
+    // tslint:disable-next-line:no-var-requires
+    //import {VueTyper} from 'vue-typer';
+    // tslint:disable-next-line:no-var-requires
+    import Markdown from 'vue3-markdown-it';
+    import { mainStore } from '@/stores/store';
+
+    export default defineComponent({
+        data() {
+          return {
+            store: mainStore
+          }
+        },
+        components: {
+            ModuleHeader,
+            ModuleSkeleton,
+            //VueTyper,
+            Markdown,
+        },
+        computed: {
+            about(): Module {
+                return this.store.getModule('about');
+            },
+        },
+        methods: {
+            /**
+             * 检测是否为url
+             * @param content 需要检测的内容
+             */
+            isUrl(content: string): boolean {
+                const strRegex = '^(((https|http|ftp|rtsp|mms):)?//)'
+                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' // ftp的user@
+                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+                    + '|' // 允许IP和DOMAIN（域名）
+                    + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+                    + '[a-z]{2,6})' // first level domain- .com or .museum
+                    + '(:[0-9]{1,4})?' // 端口- :80
+                    + '((/?)|' // a slash isn't required if there is no file name
+                    + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)$';
+                const re = new RegExp(strRegex);
+                return re.test(content);
+            },
+            simplifyUrl(url: string): string {
+                const strRegex = /^(((https|http|ftp|rtsp|mms):)?\/\/)?/;
+                return url.replace(strRegex, '');
+            },
+        }
+    })
+</script>
+
+<style scoped lang="scss">
+    @import '../styles/variable';
+
+    .about {
+        .col {
+            padding: 0 1rem;
+        }
+
+        .avatar {
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .title {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .brief {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        @media screen and (max-width: $--screen-md-min) {
+            .col {
+                padding: 0;
+                &.color-content {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+
+        .keys-row {
+            margin: 1rem auto;
+
+            .keys-col {
+                margin: .5rem auto;
+                word-break: break-all;
+                padding-right: 1rem;
+
+                .key {
+                    margin-right: .5rem;
+                    font-weight: bold;
+                }
+
+                .value {
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+</style>
