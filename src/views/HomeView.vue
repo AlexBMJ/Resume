@@ -9,7 +9,7 @@
                             shape="circle" size="large" :icon="menuDrawerVisible ? 'arrow-left' : 'bars'" @click="toggleMenuDrawer"></a-button>
                 </a-affix>
                 <a-layout-content><div id="anchor-next"></div></a-layout-content>
-                <a-layout-content v-for="id in moduleIds" v-bind:key="id">
+                <a-layout-content v-for="id in getModuleIds" v-bind:key="id">
                     <About v-if="id === 'about'"/>
                     <Experience v-if="id === 'experience'"/>
                 </a-layout-content>
@@ -55,10 +55,10 @@
             Footer,
         },
         computed: {
-            ...mapState(mainStore, ['moduleIds']),
+            ...mapState(mainStore, ['getModuleIds']),
         },
         created() {
-            this.moduleIds
+            this.getModuleIds
         }
     })
 </script>

@@ -11,7 +11,7 @@
                     {{about.content.name}},
                     <!-- <vue-typer :text="about.content.desc || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
                 </span>
-                <vue-markdown data-aos="fade-in">{{about.content.md}}</vue-markdown>
+                <Markdown data-aos="fade-in">{{about.content.md}}</Markdown>
                 <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
                     <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
                            :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -39,7 +39,7 @@
     export default defineComponent({
         data() {
           return {
-            store: mainStore
+            store: mainStore()
           }
         },
         components: {

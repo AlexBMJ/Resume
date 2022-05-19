@@ -8,7 +8,7 @@
                         <h1 class="title">{{card.title}}</h1>
                         <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                     </template>
-                    <vue-markdown>{{card.md}}</vue-markdown>
+                    <Markdown>{{card.md}}</Markdown>
                 </a-card>
             </a-timeline-item>
         </a-timeline>
@@ -34,7 +34,7 @@
         },
         computed: {
             experience(): Module {
-                return this.store.getters.getModule('experience');
+                return this.store.getModule('experience');
             },
         },
     })

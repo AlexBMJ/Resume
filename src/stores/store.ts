@@ -25,7 +25,7 @@ export const mainStore = defineStore({
         modules: [],
     }),
     getters: {
-        getTitle: (state) => {state.title || DEFAULT_TITLE},
+        getTitle: (state) => {return (state.title || DEFAULT_TITLE)},
         getSocial: (state) => {return (state.social || {})},
         getMenus (state): object[] {
             if (state.modules.length < 1) return []
@@ -36,8 +36,8 @@ export const mainStore = defineStore({
             const modules = filter((module) => module.display, state.modules);
             return map((module) => module.anchor.id, modules);
         },
-        getBanner: (state) => {state.banner || {} as Banner},
-        getModule: (state) => (id: string) => {find_module(state.modules, id)},
+        getBanner: (state) => {return (state.banner || {} as Banner)},
+        getModule: (state) => (id: string) => {return find_module(state.modules, id)},
     },
     actions: {
         init() {
