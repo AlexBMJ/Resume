@@ -10,7 +10,7 @@
                                 <h1 class="title">{{card.title}}</h1>
                                 <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                             </template>
-                            <template #extra><img width="50" draggable="false" :src="'/src/assets/'+card.icon"></template>
+                            <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)"></template>
                             <Markdown :source="card.md"/>
                         </a-card>
                     </a-timeline-item>
@@ -24,7 +24,7 @@
                                 <h1 class="title">{{card.title}}</h1>
                                 <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                             </template>
-                            <template #extra><img width="50" draggable="false" :src="'/src/assets/'+card.icon"></template>
+                            <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)"></template>
                             <Markdown :source="card.md"/>
                         </a-card>
                     </a-timeline-item>
@@ -42,6 +42,12 @@
     import { mainStore } from '@/stores/store';
 
     export default defineComponent({
+        setup() {
+            const getImageUrl = (name: string) => {
+                return new URL(`../assets/${name}`, import.meta.url).href
+            }
+            return { getImageUrl }
+        },
         data() {
           return {
             store: mainStore()
@@ -54,8 +60,8 @@
         computed: {
             experience(): Module {
                 return this.store.getModule('experience')
-            },
-        },
+            }
+        }
     })
 </script>
 
