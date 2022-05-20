@@ -1,0 +1,162 @@
+{
+  title: "Alexander Jacobsen",
+  social: {
+    github: "https://github.com/AlexBMJ",
+    twitter: "https://twitter.com/AlexBMJ01",
+    linkedin: "https://www.linkedin.com/in/AlexBMJ01",
+  },
+  banner: {
+    anchor: {
+      id: "banner",
+      icon: "home",
+      name: "Home",
+    },
+    title: "Alexander Jacobsen",
+    desc: [
+      "Installing Linux...",
+      "Writing Code...",
+      "Fixing bugs...",
+      "Writing CI/CD Workflow...",
+      "Deploying Application..."
+    ],
+  },
+  modules: [
+    {
+      display: true,
+      anchor: {
+        id: "about",
+        icon: "user",
+        name: "About"
+      },
+      header: {
+        title: "information",
+        subtitle: "about me",
+      },
+      content: {
+        name: "Alexander Jacobsen",
+        desc: [
+          "Content Desc 1",
+          "Content Desc 2",
+        ],
+        md: "Hi there! :) \
+        \n My name is Alexander Jacobsen, but people usually just call me Alex. I speak Danish, Swedish and English, but prefer digital languages such as Python. I'm generally a very happy person and extremely motivated to deep dive into new topics. I started programming when I was eight and haven't stopped since, having pressed every button I could reach and played with an abundance of software along the way. I believe communication is a must when working on a project together with others, meaning social events are a nice welcome. I almost always have three or four projects I’m working on in my spare time, but when I’m not in front of a computer I enjoy biking and climbing. ",
+      },
+      keys: {
+        "Home": "https://cv.alexbmj.com",
+        "ITU Email": "mailto:alja@itu.dk",
+        "GitHub": "https://github.com/alexbmj",
+        "Email": "mailto:alexander.magno.jacobsen@gmail.com"
+      },
+    },
+    {
+      display: true,
+      anchor: {
+        id: "skills",
+        icon: "fund",
+        name: "Skills"
+      },
+      header: {
+        title: "Qualifications",
+        subtitle: "Technical Skills",
+      },
+      skills: {
+        topics: {
+          "Languages": {
+            "Python": 5,
+            "C#": 5,
+            "C/C++": 3,
+            "Java": 5,
+            "Go": 3,
+            "F#": 2,
+            "JavaScript": 4,
+            "CSS, HTML, XML": 5,
+            "SQL": 5,
+            "Latex": 4
+          },
+          "Technical Environments": {
+            "Windows": 5,
+            "*nix": 5,
+            "Network Config (Cisco IOS, etc.)": 4,
+            "Git": 5,
+            "GitHub CI/CD": 4,
+            "Splunk": 3,
+            "FireEye": 4
+          },
+          "Creative Environments": {
+            "Adobe Photoshop": 5,
+            "Adobe After Effects": 5,
+            "Adobe Premiere Pro": 5,
+            "Microsoft Office 365": 5,
+            "Blender": 4,
+            "Unity": 5
+          }
+        }
+      },
+    },
+    {
+      display: true,
+      anchor: {
+        id: "experience",
+        icon: "idcard",
+        name: "Experience"
+      },
+      header: {
+        title: "experience",
+        subtitle: "my experience",
+      },
+      cards: [
+        {
+          title: "Nordea Bank",
+          subtitle: "Amagerbrogade 245, 2300 København",
+          icon: "nordea.png",
+          date_from: 1430101010,
+          date_to: 1546297200,
+          md: "*Student Assistant* \
+          \n### This was my first part-time job where I gained real-world experience working in a company.",
+        },
+        {
+          title: "Ørsted",
+          subtitle: "Nesa Allé 1, 2820 Gentofte",
+          icon: "orsted.png",
+          date_from: 1546297200,
+          date_to: 1597874400,
+          md: "*Student Assistant* \
+          \n### I joined Ørsted's Information Security department in my last year of high school, where I was able to explore the field while I helped automate reporting tools using Python.",
+        },
+        {
+          title: "Ørsted",
+          subtitle: "Nesa Allé 1, 2820 Gentofte",
+          icon: "orsted.png",
+          date_from: 1597874400,
+          md:"*Junior Security Concultant* \
+          \n### After high school I was able to go full-time for about a year, diving much deeper into Security Automation. Here is a breif list of projects: \
+          \n - ### Working with many tools such as Splunk, FireEye and Cortex XSOAR. \
+          \n - ### Modernizing many old security automation workflows and reporting tools. \
+          \n - ### Creating new tools to aid in critical incidents. \
+          \n - ### Linux DevOps and Maintainance for automation scripts. \
+          \n - ### Exploring OT of off-shore wind farms and deep-diving into PLC systems."
+        },
+      ],
+      unicards: [
+        {
+          title: "IT University of Copenhagen",
+          subtitle: "Rued Langgaards Vej 7, 2300 København",
+          icon: "itu.png",
+          date_from: 1597874400,
+          md: "*Bachelor's degree in Software Development* \
+          \n ### I am currently undertaking a computer science degree at ITU. \
+          \n ### Courses: \
+          \n - ### Introduction to Programming (Autumn 2020) \
+          \n - ### Discrete Mathematics BSc (Autumn 2020) \
+          \n - ### Project work and Communication (Autumn 2020) \
+          \n - ### Algorithms and Data Structures, MSc (Spring 2021) \
+          \n - ### First-year Project: Visualization, Navigation, Searching, and Route Planning (Spring 2021) \
+          \n - ### UX and Interface Design (Spring 2021) \
+          \n - ### Introduction to Database Systems, SWU (Autumn 2021) \
+          \n - ### DevOps, Software Evolution and Software Maintenance, BSc (Spring 2022) \
+          \n - ### Second Year Project: Software Development in Large Teams (15 ECTS) (Spring 2022)",
+        },
+      ],
+    }
+  ],
+}
