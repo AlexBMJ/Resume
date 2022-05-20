@@ -2,7 +2,7 @@
     <a-layout class="layout-menu">
         <div class="header">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
-                <img draggable="false" src="../assets/avatar.jpg">
+                <img draggable="false" src="../assets/avatar_secondary.jpg">
             </span>
             <span>{{ getBanner.name }}</span>
         </div>

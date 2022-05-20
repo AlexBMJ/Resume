@@ -7,7 +7,7 @@
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
             <div>
-                <h1>{{banner.anchor.name || '林中小舍'}}</h1>
+                <h1>{{banner.anchor.name || 'test'}}</h1>
                 <h3 class="typer white">
                     鄙人，
                     <!-- <vue-typer :text="(banner && banner.desc) || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
@@ -63,7 +63,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: $--color-cyan url("../assets/bg_banner.jpg") no-repeat center center scroll;
+            background: $--color-cyan url("../assets/bg_banner.png") no-repeat center center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
