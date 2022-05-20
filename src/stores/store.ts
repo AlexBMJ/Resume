@@ -27,7 +27,7 @@ export const mainStore = defineStore({
     getters: {
         getTitle: (state) => {return (state.title || DEFAULT_TITLE)},
         getSocial: (state) => {return (state.social || {})},
-        getMenus (state): object[] {
+        getMenus (state): Anchor[] {
             if (state.modules.length < 1) return []
             const _modules = concat([state.banner], filter((module) => module.display, state.modules));
             return map((module) => module.anchor, _modules);

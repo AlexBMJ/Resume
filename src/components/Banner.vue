@@ -45,7 +45,7 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
-    @import '../styles/fork';
+    @import '../styles/main';
 
     .banner {
         display: flex;
@@ -54,7 +54,7 @@
         align-items: center;
         width: 100vw;
         height: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
 
         .bg {
             position: absolute;

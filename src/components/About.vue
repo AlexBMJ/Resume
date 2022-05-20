@@ -3,7 +3,7 @@
         <ModuleHeader :title="about.header.title" :sub-title="about.header.subtitle"/>
         <a-row type="flex" justify="center" align="top">
             <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
-                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/about/avatar_about.jpg"/>
+                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/avatar_about.jpg"/>
             </a-col>
             <a-col class="color-content col" :xs="24" :sm="24" :md="24" :lg="14" :xl="16">
                 <span data-aos="fade-in" class="title color-title">{{about.header.subtitle}}</span>
@@ -11,7 +11,7 @@
                     {{about.content.name}},
                     <!-- <vue-typer :text="about.content.desc || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
                 </span>
-                <Markdown data-aos="fade-in">{{about.content.md}}</Markdown>
+                <Markdown data-aos="fade-in" :source="about.content.md"/>
                 <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
                     <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
                            :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -54,26 +54,22 @@
             },
         },
         methods: {
-            /**
-             * 检测是否为url
-             * @param content 需要检测的内容
-             */
             isUrl(content: string): boolean {
-                const strRegex = '^(((https|http|ftp|rtsp|mms):)?//)'
-                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' // ftp的user@
-                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
-                    + '|' // 允许IP和DOMAIN（域名）
-                    + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
-                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+                const strRegex = '^(((https|http|ftp|rtsp|mms|mailto):)?//)'
+                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' // ftp/user@
+                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP/URL- 199.194.52.184
+                    + '|' // IP/DOMAIN
+                    + '([0-9a-z_!~*\'()-]+.)*' // subdomain - www.
+                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // subdomain
                     + '[a-z]{2,6})' // first level domain- .com or .museum
-                    + '(:[0-9]{1,4})?' // 端口- :80
+                    + '(:[0-9]{1,4})?' // port :80
                     + '((/?)|' // a slash isn't required if there is no file name
                     + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)$';
                 const re = new RegExp(strRegex);
                 return re.test(content);
             },
             simplifyUrl(url: string): string {
-                const strRegex = /^(((https|http|ftp|rtsp|mms):)?\/\/)?/;
+                const strRegex = /^(((https|http|ftp|rtsp|mms|mailto):(\/\/)?)?)?/;
                 return url.replace(strRegex, '');
             },
         }
@@ -82,6 +78,7 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
+    @import '../styles/main';
 
     .about {
         .col {

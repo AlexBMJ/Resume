@@ -1,19 +1,19 @@
-<!-- 菜单 -->
-
 <template>
     <a-layout class="layout-menu">
         <div class="header">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
-            <span>{{ banner.name || '林中小舍'}}</span>
+            <span>{{ getBanner.name }}</span>
         </div>
         <a-layout-content class="menu">
             <a-menu>
-                <a-menu-item v-for="m in menus" v-bind:key="m.id">
-                    <span>{{ console.log(m.icon) }}</span>
-                    <!-- <a-icon :type="m.icon" /> -->
-                    <a v-smooth-scroll :href="'#' + m.id" @click="closeMenuDrawer">{{m.name}}</a>
+                <a-menu-item v-for="m in getMenus" :key="m.id">
+                    <home-outlined v-if="m.icon === 'home'" />
+                    <idcard-outlined v-else-if="m.icon === 'idcard'" />
+                    <user-outlined v-else-if="m.icon === 'user'"/>
+                    <info-circle-outlined v-else/>
+                    <a v-smooth-scroll :href="'#' + m.id" style="padding-left: 10px;" @click="closeMenuDrawer">{{m.name}}</a>
                 </a-menu-item>
             </a-menu>
         </a-layout-content>
@@ -22,7 +22,11 @@
                 <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>
             </a-row>
             <a-row type="flex" justify="center" align="middle" :gutter="2">
-                <!-- <a-col span="24"><Copyrights color="rgb(136,136,136)" :size=".6"/></a-col> -->
+                <a-col span="24">
+                    <a style="color: rgb(136,136,136); font-size: .6em;" href="https://alexbmj.com" target="_blank">
+                        AlexBMJ
+                    </a>
+                </a-col>
             </a-row>
         </a-layout-footer>
     </a-layout>
@@ -33,10 +37,15 @@
     import Social from '@/components/footer/Social.vue';
     import { mapState } from 'pinia';
     import { mainStore } from '@/stores/store';
+    import { HomeOutlined, IdcardOutlined, UserOutlined, InfoCircleOutlined } from '@ant-design/icons-vue';
 
     export default defineComponent({
         components: {
             Social,
+            HomeOutlined,
+            IdcardOutlined,
+            UserOutlined,
+            InfoCircleOutlined
         },
         methods: {
             closeMenuDrawer() {
@@ -44,17 +53,18 @@
             }
         },
         computed: {
-            ...mapState(mainStore, ['banner', 'menus']),
+            ...mapState(mainStore, ['getBanner', 'getMenus']),
         },
         created() {
-            this.menus
-            this.banner
+            this.getMenus
+            this.getBanner
         }
     })
 </script>
 
 <style scoped lang="scss">
     @import '../styles/variable';
+    @import '../styles/main';
 
     .layout-menu {
         width: 100%;

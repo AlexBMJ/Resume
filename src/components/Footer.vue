@@ -1,6 +1,10 @@
 <template>
     <a-row class="footer" type="flex" justify="center" align="middle" :gutter="2">
-        <!-- <a-col :xs="24" :sm="8" :md="6" :lg="6" :xl="6"><Copyrights color="ghostwhite" :size="1"/></a-col> -->
+        <a-col :xs="24" :sm="8" :md="6" :lg="6" :xl="6">
+            <a style="color: ghostwhite; font-size: 1em;" href="https://alexbmj.com" target="_blank">
+                AlexBMJ
+            </a>
+        </a-col>
         <a-col :xs="24" :sm="6" :md="4" :lg="4" :xl="4">
             <a-popover arrowPointAtCenter>
                 <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
@@ -25,6 +29,7 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
+    @import '../styles/main';
 
     .footer {
         &>div{

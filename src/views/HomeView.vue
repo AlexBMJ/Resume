@@ -69,7 +69,7 @@
     .layout-header {
         z-index: 0;
         height: 100vh;
-        overflow: auto;
+        overflow-x: hidden;
         padding: 0;
     }
 

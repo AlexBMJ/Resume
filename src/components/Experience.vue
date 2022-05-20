@@ -2,13 +2,13 @@
     <div class="content" id="experience">
         <ModuleHeader :title="experience.header.title" :sub-title="experience.header.subtitle"/>
         <a-timeline>
-            <a-timeline-item data-aos="fade-in" v-for="card in experience.cards" v-bind:key="card.title + card.subtitle">
+            <a-timeline-item data-aos="fade-in" v-for="card in experience.cards">
                 <a-card class="experience-card" :bordered="true" style="width: 100%">
-                    <template slot="title">
+                    <template v-slot:title>
                         <h1 class="title">{{card.title}}</h1>
                         <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                     </template>
-                    <Markdown>{{card.md}}</Markdown>
+                    <Markdown :source="card.md"/>
                 </a-card>
             </a-timeline-item>
         </a-timeline>
@@ -34,7 +34,7 @@
         },
         computed: {
             experience(): Module {
-                return this.store.getModule('experience');
+                return this.store.getModule('experience')
             },
         },
     })
@@ -42,12 +42,13 @@
 
 <style scoped lang="scss">
     @import '../styles/variable';
+    @import '../styles/main';
 
     .experience-card {
         .title {
             width: 100%;
             font-size: 1rem;
-            overflow: scroll;
+            overflow: hidden;
             margin: 0;
         }
 
