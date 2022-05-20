@@ -37,7 +37,7 @@
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 let banner_typer = typer('.typer').empty().pause(1000);
                 
-                this.getBanner.desc.forEach((line) => {
+                this.getBanner.desc.forEach((line: string) => {
                     banner_typer.line(line);
                     banner_typer.pause(1000);
                     banner_typer.back('all');
