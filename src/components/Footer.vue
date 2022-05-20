@@ -8,7 +8,7 @@
         <a-col :xs="24" :sm="6" :md="4" :lg="4" :xl="4">
             <a-popover arrowPointAtCenter>
                 <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
-                    <img alt="林舍|Maner·Fan" draggable="false" src="../assets/avatar_secondary.jpg"/>
+                    <img alt="AlexBMJ" draggable="false" src="../assets/avatar_secondary.jpg"/>
                 </span>
             </a-popover>
         </a-col>

@@ -12,6 +12,7 @@
                     <home-outlined v-if="m.icon === 'home'" />
                     <idcard-outlined v-else-if="m.icon === 'idcard'" />
                     <user-outlined v-else-if="m.icon === 'user'"/>
+                    <fund-outlined v-else-if="m.icon === 'fund'"/>
                     <info-circle-outlined v-else/>
                     <a v-smooth-scroll :href="'#' + m.id" style="padding-left: 10px;" @click="closeMenuDrawer">{{m.name}}</a>
                 </a-menu-item>
@@ -37,7 +38,7 @@
     import Social from '@/components/footer/Social.vue';
     import { mapState } from 'pinia';
     import { mainStore } from '@/stores/store';
-    import { HomeOutlined, IdcardOutlined, UserOutlined, InfoCircleOutlined } from '@ant-design/icons-vue';
+    import { HomeOutlined, IdcardOutlined, UserOutlined, InfoCircleOutlined, FundOutlined } from '@ant-design/icons-vue';
 
     export default defineComponent({
         components: {
@@ -45,6 +46,7 @@
             HomeOutlined,
             IdcardOutlined,
             UserOutlined,
+            FundOutlined,
             InfoCircleOutlined
         },
         methods: {

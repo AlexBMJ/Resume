@@ -6,11 +6,12 @@
             <a-layout class="layout-content">
                 <a-affix>
                     <a-button :class="{'sider-menu-trigger': true, 'drawer-closed': !menuDrawerVisible, 'drawer-open': menuDrawerVisible}"
-                            shape="circle" size="large" :icon="menuDrawerVisible ? 'arrow-left' : 'bars'" @click="toggleMenuDrawer"></a-button>
+                            shape="circle" size="large" :icon="menuDrawerVisible ? 'ᐸ' : '☰'" @click="toggleMenuDrawer"></a-button>
                 </a-affix>
                 <a-layout-content><div id="anchor-next"></div></a-layout-content>
-                <a-layout-content v-for="id in getModuleIds" v-bind:key="id">
+                <a-layout-content v-for="id in getModuleIds">
                     <About v-if="id === 'about'"/>
+                    <TechnicalSkills v-if="id === 'skills'"/>
                     <Experience v-if="id === 'experience'"/>
                 </a-layout-content>
                 <a-layout-footer><Footer/></a-layout-footer>
@@ -32,6 +33,7 @@
     import About from '@/components/About.vue';
     import Experience from '@/components/Experience.vue';
     import Footer from '@/components/Footer.vue';
+    import TechnicalSkills from '@/components/TechnicalSkills.vue';
 
     export default defineComponent({
         data() {
@@ -51,6 +53,7 @@
             Banner,
             Menu,
             About,
+            TechnicalSkills,
             Experience,
             Footer,
         },

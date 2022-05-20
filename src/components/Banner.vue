@@ -7,11 +7,8 @@
                 <img draggable="false" src="../assets/avatar.jpg">
             </span>
             <div>
-                <h1>{{banner.anchor.name || 'test'}}</h1>
-                <h3 class="typer white">
-                    鄙人，
-                    <!-- <vue-typer :text="(banner && banner.desc) || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
-                </h3>
+                <h1>{{getBanner.title}}</h1>
+                <h3 class="typer"></h3>
             </div>
         </div>
         <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#anchor-next" v-smooth-scroll>
@@ -23,22 +20,37 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import { mapState } from 'pinia';
-    //import { VueTyper } from 'vue-typer';
-    import { DoubleRightOutlined } from '@ant-design/icons-vue';
-    import { LoadingOutlined } from '@ant-design/icons-vue';
+    import typer from 'typer-js';
+    import { DoubleRightOutlined, LoadingOutlined } from '@ant-design/icons-vue';
     import { mainStore } from '@/stores/store';
 
     export default defineComponent({
         components: {
             DoubleRightOutlined,
-            LoadingOutlined
-            //VueTyper
+            LoadingOutlined,
         },
         computed: {
-            ...mapState(mainStore, ['banner']),
+            ...mapState(mainStore, ['getBanner'])
+        },
+        methods: {
+            async runTyper() {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                let banner_typer = typer('.typer').empty().pause(1000);
+                
+                this.getBanner.desc.forEach((line) => {
+                    banner_typer.line(line);
+                    banner_typer.pause(1000);
+                    banner_typer.back('all');
+                });
+                banner_typer.empty();
+                banner_typer.repeat(Infinity);
+            }
         },
         created() {
-            this.banner;
+            this.getBanner;
+        },
+        mounted() {
+            this.runTyper();
         }
     })
 </script>
