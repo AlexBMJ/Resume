@@ -67,7 +67,7 @@
                 return re.test(content);
             },
             simplifyUrl(url: string): string {
-                const strRegex = /^(((https|http|ftp|rtsp|mms|mailto):(\/\/)?)?)?/;
+                const strRegex = /^(((https|http|ftp|rtsp|mms|mailto):(\/\/)?)?(www\.)?)?/;
                 return url.replace(strRegex, '');
             },
             async runTyper() {
