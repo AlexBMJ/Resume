@@ -8,7 +8,10 @@
             </span>
             <div>
                 <h1>{{getBanner.title}}</h1>
-                <h3 class="typer"></h3>
+                <div class="typer-container">
+                    <h3 class="typer"></h3>
+                </div>
+                
             </div>
         </div>
         <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#anchor-next" v-smooth-scroll>
@@ -67,6 +70,17 @@
         width: 100vw;
         height: 100%;
         overflow: hidden;
+
+        .typer {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+        .typer-container {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
 
         .bg {
             position: absolute;

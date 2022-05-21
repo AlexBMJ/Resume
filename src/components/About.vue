@@ -8,10 +8,10 @@
             <a-col class="color-content col" :xs="24" :sm="24" :md="24" :lg="14" :xl="16">
                 <span data-aos="fade-in" class="title color-title">{{about.header.subtitle}}</span>
                 <span data-aos="fade-in" class="brief typer black">
-                    {{about.content.name}},
-                    <!-- <vue-typer :text="about.content.desc || '林舍'" :type-delay='200' eraseStyle='select-all'></vue-typer> -->
+                    <p class="sh">$</p>
+                    <p class="about-typer"></p>
                 </span>
-                <Markdown data-aos="fade-in" :source="about.content.md"/>
+                <Markdown data-aos="fade-in" style="max-width: 52rem; padding-top: 2rem;" :source="about.content.md"/>
                 <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
                     <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
                            :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -30,8 +30,7 @@
     import ModuleHeader from '@/components/module/ModuleHeader.vue';
     import ModuleSkeleton from '@/components/module/ModuleSkeleton.vue';
     import type {Module} from '@/api/user_interface';
-    // tslint:disable-next-line:no-var-requires
-    //import {VueTyper} from 'vue-typer';
+    import typer from 'typer-js';
     // tslint:disable-next-line:no-var-requires
     import Markdown from 'vue3-markdown-it';
     import { mainStore } from '@/stores/store';
@@ -45,7 +44,6 @@
         components: {
             ModuleHeader,
             ModuleSkeleton,
-            //VueTyper,
             Markdown,
         },
         computed: {
@@ -72,6 +70,17 @@
                 const strRegex = /^(((https|http|ftp|rtsp|mms|mailto):(\/\/)?)?)?/;
                 return url.replace(strRegex, '');
             },
+            async runTyper() {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                typer('.about-typer').empty().pause(1000).cursor({ block: true, blink: 'hard', color: 'red' })
+                .line(this.about.content.name, { min: 100, max: 350 })
+                .pause(3000)
+                .back('all')
+                .repeat(Infinity);
+            }
+            },
+        mounted() {
+            this.runTyper();
         }
     })
 </script>
@@ -79,8 +88,21 @@
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
 
     .about {
+        .about-typer {
+            position: absolute;
+            margin-left: 0.6em;
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: large;
+        }
+
+        .sh {
+            position: absolute;
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: large;
+        }
         .col {
             padding: 0 1rem;
         }
@@ -121,11 +143,15 @@
                 .key {
                     margin-right: .5rem;
                     font-weight: bold;
+                    font-family: 'Ubuntu Mono', monospace;
+                    font-size: large;
                 }
 
                 .value {
                     color: inherit;
                     text-decoration: underline;
+                    font-family: 'Ubuntu Mono', monospace;
+                    font-size: large;
                 }
             }
         }

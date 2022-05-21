@@ -80,8 +80,8 @@
     #skills table {
         font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
         border-collapse: collapse;
-        max-width: 50%;
         width: 100%;
+        max-width: 45rem; 
     }
 
     #skills td, #skills th {

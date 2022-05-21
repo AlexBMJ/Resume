@@ -7,7 +7,10 @@
                     <a-timeline-item data-aos="fade-in" v-for="card in experience.cards">
                         <a-card class="experience-card" :bordered="true" style="width: 100%">
                             <template v-slot:title>
-                                <h1 class="title">{{card.title}}</h1>
+                                <div style="display: inline; float: left; margin-right: 0.5rem;">
+                                    <h1 class="title">{{card.title}}</h1>
+                                </div>
+                                <h1 class="date-title">{{formatDate(card.date_from)}} - {{formatDate(card.date_to)}}</h1>
                                 <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                             </template>
                             <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)"></template>
@@ -21,7 +24,11 @@
                     <a-timeline-item data-aos="fade-in" v-for="card in experience.unicards">
                         <a-card class="experience-card" :bordered="true" style="width: 100%">
                             <template v-slot:title>
-                                <h1 class="title">{{card.title}}</h1>
+                                <div style="display: inline; float: left; margin-right: 0.5rem;">
+                                    <h1 class="title">{{card.title}}</h1>
+                                </div>
+                                <h1 class="date-title">{{formatDate(card.date_from)}} - {{formatDate(card.date_to)}}</h1>
+
                                 <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
                             </template>
                             <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)"></template>
@@ -61,6 +68,13 @@
             experience(): Module {
                 return this.store.getModule('experience')
             }
+        },
+        methods: {
+            formatDate(timestamp: number): string {
+                if (!timestamp) { return 'Now'; }
+                var date = new Date(timestamp*1000);
+                return date.toLocaleString("en-US", { year:"numeric", month: "short" });
+            }
         }
     })
 </script>
@@ -78,16 +92,24 @@
     .experience-card {
         .title {
             width: 100%;
-            font-size: 1rem;
+            font-size: 1.2rem;
             overflow: hidden;
             margin: 0;
         }
 
+        .date-title {
+            width: 100%;
+            font-size: .8rem;
+            display: block;
+            margin-top: .4rem;
+            padding-left: 1rem;
+        }
+
         .sub-title {
             width: 100%;
-            font-size: .5rem;
+            font-size: .6rem;
             display: block;
-            margin-top: .5rem;
+            margin-top: .2rem;
         }
     }
 </style>
