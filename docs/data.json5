@@ -16,7 +16,7 @@
       "Installing Linux...",
       "Writing Code...",
       "Fixing bugs...",
-      "Writing CI/CD Workflow...",
+      "Building CI/CD Workflow...",
       "Deploying Application..."
     ],
   },
@@ -33,16 +33,13 @@
         subtitle: "about me",
       },
       content: {
-        name: "Alexander Jacobsen",
-        desc: [
-          "Content Desc 1",
-          "Content Desc 2",
-        ],
-        md: "Hi there! :) \
-        \n My name is Alexander Jacobsen, but people usually just call me Alex. I speak Danish, Swedish and English, but prefer digital languages such as Python. I'm generally a very happy person and extremely motivated to deep dive into new topics. I started programming when I was eight and haven't stopped since, having pressed every button I could reach and played with an abundance of software along the way. I believe communication is a must when working on a project together with others, meaning social events are a nice welcome. I almost always have three or four projects I’m working on in my spare time, but when I’m not in front of a computer I enjoy biking and climbing. ",
+        name: "whoami",
+        desc: [],
+        md: "My name is Alexander Jacobsen, but people usually just call me Alex. I speak Danish, Swedish and English, but prefer digital languages such as Python. I'm generally a very happy person and extremely motivated to deep dive into new topics. \
+        \n\nI started programming when I was eight and haven't stopped since, having pressed every button I could reach and played with an abundance of software along the way. I believe communication is a must when working on a project together with others, meaning social events are a nice welcome. I almost always have three or four projects I’m working on in my spare time, but when I’m not in front of a computer I enjoy biking and climbing. ",
       },
       keys: {
-        "Home": "https://cv.alexbmj.com",
+        "LinkedIn": "https://www.linkedin.com/in/alexbmj01",
         "ITU Email": "mailto:alja@itu.dk",
         "GitHub": "https://github.com/alexbmj",
         "Email": "mailto:alexander.magno.jacobsen@gmail.com"
@@ -61,35 +58,37 @@
       },
       skills: {
         topics: {
-          "Languages": {
-            "Python": 5,
-            "C#": 5,
-            "C/C++": 3,
-            "Java": 5,
-            "Go": 3,
-            "F#": 2,
-            "JavaScript": 4,
-            "CSS, HTML, XML": 5,
-            "SQL": 5,
-            "Latex": 4
-          },
-          "Technical Environments": {
-            "Windows": 5,
-            "*nix": 5,
-            "Network Config (Cisco IOS, etc.)": 4,
-            "Git": 5,
-            "GitHub CI/CD": 4,
-            "Splunk": 3,
-            "FireEye": 4
-          },
-          "Creative Environments": {
-            "Adobe Photoshop": 5,
-            "Adobe After Effects": 5,
-            "Adobe Premiere Pro": 5,
-            "Microsoft Office 365": 5,
-            "Blender": 4,
-            "Unity": 5
-          }
+          "Languages": [
+            {name:"Python", score:5, icon:"python.svg"},
+            {name:"C#", score:5, icon:"csharp.svg"},
+            {name:"C/C++", score:3, icon:"cpp.svg"},
+            {name:"Java", score:5, icon:"java.svg"},
+            {name:"Go", score:3, icon:"go.svg"},
+            {name:"F#", score:2, icon:"fsharp.svg"},
+            {name:"JavaScript", score:4, icon:"js.svg"},
+            {name:"CSS, HTML", score:5, icon:"html5.svg"},
+            {name:"SQL", score:5, icon:"sql.svg"},
+            {name:"Bash", score:5, icon:"bash.svg"},
+            {name:"LaTex", score:4, icon:"latex.svg"}
+          ],
+          "Technical Environments": [
+            {name:"Windows", score:5, icon:"windows.svg"},
+            {name:"*nix", score:5, icon:"linux.svg"},
+            {name:"Docker", score:5, icon:"docker.svg"},
+            {name:"Git", score:5, icon:"git.svg"},
+            {name:"GitHub CI/CD", score:4, icon:"github.svg"},
+            {name:"Network Config (Cisco IOS, etc.)", score:4, icon:"python.svg"},
+            {name:"Splunk", score:3, icon:"splunk.svg"},
+            {name:"FireEye", score:4, icon:"fireeye.svg"}
+          ],
+          "Creative Environments": [
+            {name:"Adobe Photoshop", score:5, icon:"photoshop.svg"},
+            {name:"Adobe After Effects", score:5, icon:"after_effects.svg"},
+            {name:"Adobe Premiere Pro", score:5, icon:"premiere_pro.svg"},
+            {name:"Microsoft Office", score:5, icon:"msoffice.svg"},
+            {name:"Unity", score:5, icon:"unity.svg"},
+            {name:"Blender", score:4, icon:"blender.svg"}
+          ]
         }
       },
     },
@@ -119,7 +118,7 @@
           subtitle: "Nesa Allé 1, 2820 Gentofte",
           icon: "orsted.png",
           date_from: 1546297200,
-          date_to: 1597874400,
+          date_to: 1564610400,
           md: "*Student Assistant* \
           \n### I joined Ørsted's Information Security department in my last year of high school, where I was able to explore the field while I helped automate reporting tools using Python.",
         },
@@ -127,8 +126,8 @@
           title: "Ørsted",
           subtitle: "Nesa Allé 1, 2820 Gentofte",
           icon: "orsted.png",
-          date_from: 1597874400,
-          md:"*Junior Security Concultant* \
+          date_from: 1564610400,
+          md:"*Junior Security Consultant* \
           \n### After high school I was able to go full-time for about a year, diving much deeper into Security Automation. Here is a breif list of projects: \
           \n - ### Working with many tools such as Splunk, FireEye and Cortex XSOAR. \
           \n - ### Modernizing many old security automation workflows and reporting tools. \
@@ -154,7 +153,7 @@
           \n - ### UX and Interface Design (Spring 2021) \
           \n - ### Introduction to Database Systems, SWU (Autumn 2021) \
           \n - ### DevOps, Software Evolution and Software Maintenance, BSc (Spring 2022) \
-          \n - ### Second Year Project: Software Development in Large Teams (15 ECTS) (Spring 2022)",
+          \n - ### Second Year Project: Software Development in Large Teams (Spring 2022)",
         },
       ],
     }
