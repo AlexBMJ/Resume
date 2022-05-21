@@ -1,15 +1,18 @@
 <template>
     <div class="content skills" id="skills">
         <ModuleHeader :title="skills.header.title" :sub-title="skills.header.subtitle"/>
-        <table v-for="(data,topic) in skills.skills.topics">
+        <table v-for="(entries,topic) in skills.skills.topics">
             <tr data-aos="fade-in">
                 <th>{{topic}}</th>
                 <th>Proficiency</th>
             </tr>
-            <tr data-aos="fade-in" v-for="(score,name) in data">
-                <td style="font-size: large;">{{name}}</td>
+            <tr data-aos="fade-in" v-for="entry in entries">
+                <td style="font-size: large;">
+                <img class="logo" :src="getImageUrl(entry.icon)">
+                {{entry.name}}
+                </td>
                 <td class="score">
-                    <a-rate :value="score" character="⬤" disabled /> 
+                    <a-rate :value="entry.score" character="⬤" disabled /> 
                 </td>
             </tr>
         </table>
@@ -26,6 +29,12 @@
     import { CheckCircleFilled } from '@ant-design/icons-vue';
 
     export default defineComponent({
+        setup() {
+            const getImageUrl = (name: string) => {
+                return new URL(`../assets/logo/${name}`, import.meta.url).href
+            }
+            return { getImageUrl }
+        },
         data() {
           return {
             test: 0,
@@ -66,46 +75,44 @@
     })
 </script>
 
-<style>
-    .ant-rate {
-        color: #04AA6D;
-    }
-</style>
-
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
 
-
-    #skills table {
-        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        max-width: 45rem; 
-    }
-
-    #skills td, #skills th {
-        border: 0px solid rgb(227, 227, 227);
-        padding: 8px;
-    }
-
-    #skills .score {
-        width: 160px;
-    }
-
-    #skills tr:nth-child(even){background-color: #ebedf0;}
-
-    #skills tr:hover {background-color: #e3882d88;}
-
-    #skills th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #04AA6D;
-        color: white;
-    }
-
     .skills {
+        table {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 45rem; 
+        }
+
+        td, th {
+            border: 0px solid rgb(227, 227, 227);
+            padding: 8px;
+        }
+
+        .logo {
+            margin-left: 0.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .score {
+            width: 160px;
+        }
+
+        tr:nth-child(even){background-color: #ebedf0;}
+
+        tr:hover {background-color: #e3882d88;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
         .col {
             padding: 0 1rem;
         }
