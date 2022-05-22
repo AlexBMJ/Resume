@@ -2,8 +2,8 @@
     <div class="content skills" id="skills">
         <ModuleHeader :title="skills.header.title" :sub-title="skills.header.subtitle"/>
         <a-row data-aos="fade-in" class="keys-row" type="flex" justify="left" align="top">
-            <a-col class="keys-col" justify="left" v-for="(entries,topic) in skills.skills.topics" 
-            :xs="35" :sm="35" :md="35" :lg="20" :xl="12">
+            <a-col class="keys-col spacing" justify="left" v-for="(entries,topic) in skills.skills.topics" 
+            :xs="35" :sm="35" :md="35" :lg="35" :xl="12">
                 <table>
                     <tr data-aos="fade-in">
                         <th>{{topic}}</th>
@@ -92,6 +92,12 @@
             max-width: 50rem; 
         }
 
+        th {
+            border: 0px solid rgb(227, 227, 227);
+            padding: 8px;
+            font-size: large;
+        }
+
         td, th {
             border: 0px solid rgb(227, 227, 227);
             padding: 8px;
@@ -138,13 +144,8 @@
             margin: 1rem auto;
         }
 
-        @media screen and (max-width: $--screen-md-min) {
-            .col {
-                padding: 0;
-                &.color-content {
-                    margin-top: 1.5rem;
-                }
-            }
+        .spacing {
+            padding-right: 2rem;
         }
 
         .keys-row {
@@ -164,6 +165,25 @@
                     color: inherit;
                     text-decoration: underline;
                 }
+            }
+        }
+
+        @media screen and (max-width: $--screen-md-min) {
+            .col {
+                padding: 0;
+                &.color-content {
+                    margin-top: 1.5rem;
+                }
+            }
+
+            .spacing {
+                padding-right: 0rem;
+            }
+        }
+
+        @media screen and (max-width: $--screen-lg-min) {
+            .spacing {
+                padding-right: 0rem;
             }
         }
     }
