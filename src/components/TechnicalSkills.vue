@@ -154,11 +154,9 @@
                 margin: .5rem auto;
                 margin-left: 0;
                 word-break: break-word;
-                padding-right: 1rem;
                 width: 100%;
 
                 .key {
-                    margin-right: .5rem;
                     font-weight: bold;
                 }
 

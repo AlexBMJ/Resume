@@ -3,7 +3,7 @@
         <ModuleHeader :title="experience.header.title" :sub-title="experience.header.subtitle"/>
         <a-row type="flex" justify="left" align="top">
             <a-col class="col" :xs="70" :sm="70" :md="70" :lg="70" :xl="12">
-                <a-timeline>
+                <a-timeline class="timeline">
                     <a-timeline-item data-aos="fade-in" v-for="card in experience.cards">
                         <a-card class="experience-card" :bordered="true" style="width: 100%">
                             <template v-slot:title>
@@ -88,20 +88,6 @@
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
-    
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .flex-container > div {
-        background-color: #f1f1f1;
-        width: 100px;
-        margin: 10px;
-        text-align: center;
-        line-height: 75px;
-        font-size: 30px;
-        }
 
     .col {
         padding: 0 1rem;
@@ -109,14 +95,13 @@
 
     .line-content {
         visibility: hidden;
-
     }
 
 
     @media screen and (max-width: $--screen-sm-min) {
         .col {
             padding: 0;
-            min-width: 20rem;
+            min-width: 18rem;
         
             .line-content {
                 visibility: visible;

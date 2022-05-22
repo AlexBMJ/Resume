@@ -26,6 +26,13 @@ body {
   text-align: left;
 }
 
+@media screen and (max-width: $--screen-xs-min) {
+  .content {
+    padding: 0.5rem;
+    text-align: left;
+  }
+}
+
 .ant-layout-sider-zero-width-trigger {
   display: none;
 }
