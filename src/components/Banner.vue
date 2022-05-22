@@ -14,7 +14,7 @@
                 
             </div>
         </div>
-        <a data-aos="fade-in" class="scroll-next animated infinite bounce" href="#anchor-next" v-smooth-scroll>
+        <a data-aos="fade-in" class="scroll-next animated infinite bounce" draggable="false" href="#anchor-next" v-smooth-scroll>
             <double-right-outlined />
         </a>
     </div>

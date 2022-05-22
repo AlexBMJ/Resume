@@ -1,21 +1,26 @@
 <template>
     <div class="content skills" id="skills">
         <ModuleHeader :title="skills.header.title" :sub-title="skills.header.subtitle"/>
-        <table v-for="(entries,topic) in skills.skills.topics">
-            <tr data-aos="fade-in">
-                <th>{{topic}}</th>
-                <th>Proficiency</th>
-            </tr>
-            <tr data-aos="fade-in" v-for="entry in entries">
-                <td style="font-size: large;">
-                <img class="logo" :src="getImageUrl(entry.icon)">
-                {{entry.name}}
-                </td>
-                <td class="score">
-                    <a-rate :value="entry.score" character="⬤" disabled /> 
-                </td>
-            </tr>
-        </table>
+        <a-row data-aos="fade-in" class="keys-row" type="flex" justify="left" align="top">
+            <a-col class="keys-col" justify="left" v-for="(entries,topic) in skills.skills.topics" 
+            :xs="35" :sm="35" :md="35" :lg="20" :xl="12">
+                <table>
+                    <tr data-aos="fade-in">
+                        <th>{{topic}}</th>
+                        <th>Proficiency</th>
+                    </tr>
+                    <tr data-aos="fade-in" v-for="entry in entries">
+                        <td style="font-size: large;">
+                        <img class="logo" draggable="false" :src="getImageUrl(entry.icon)">
+                        {{entry.name}}
+                        </td>
+                        <td class="score">
+                            <a-rate :value="entry.score" character="⬤" disabled /> 
+                        </td>
+                    </tr>
+                </table>
+            </a-col>
+        </a-row>
     </div>
 </template>
 
@@ -84,7 +89,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
-            max-width: 45rem; 
+            max-width: 50rem; 
         }
 
         td, th {
@@ -147,8 +152,10 @@
 
             .keys-col {
                 margin: .5rem auto;
-                word-break: break-all;
+                margin-left: 0;
+                word-break: break-word;
                 padding-right: 1rem;
+                width: 100%;
 
                 .key {
                     margin-right: .5rem;
