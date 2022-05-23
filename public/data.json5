@@ -77,9 +77,7 @@
             {name:"Docker", score:5, icon:"docker.svg"},
             {name:"Git", score:5, icon:"git.svg"},
             {name:"GitHub CI/CD", score:4, icon:"github.svg"},
-            {name:"Network Config (Cisco IOS, etc.)", score:4, icon:"cisco-router.svg"},
-            {name:"Splunk", score:3, icon:"splunk.svg"},
-            {name:"FireEye", score:4, icon:"fireeye.svg"}
+            {name:"Network Config (Cisco IOS, etc.)", score:4, icon:"cisco-router.svg"}
           ],
           "Creative Environments": [
             {name:"Adobe Photoshop", score:5, icon:"photoshop.svg"},
