@@ -6,7 +6,7 @@
             <a-layout class="layout-content">
                 <a-affix>
                     <a-button :class="{'sider-menu-trigger': true, 'drawer-closed': !menuDrawerVisible, 'drawer-open': menuDrawerVisible}"
-                            shape="circle" size="large" :icon="menuDrawerVisible ? 'ᐸ' : '☰'" @click="toggleMenuDrawer"></a-button>
+                            shape="circle" size="large" :icon="menuDrawerVisible ? '☰' : '☰'" @click="toggleMenuDrawer"></a-button>
                 </a-affix>
                 <a-layout-content><div id="anchor-next"></div></a-layout-content>
                 <a-layout-content v-for="id in getModuleIds">

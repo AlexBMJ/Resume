@@ -3,7 +3,7 @@ import api from '@/api';
 import type { Module, UserData, Banner, Anchor } from '@/api/user_interface';
 import { find, concat, filter, map } from 'lodash/fp';
 
-const DEFAULT_TITLE = 'CV';
+const DEFAULT_TITLE = 'Alexander Jacobsen';
 const DEFAULT_MODULE = {display: false, anchor: {id: '', icon: '', name: ''}, header: {title: '', subtitle: ''}};
 
 function find_module(modules: Module[], id: string) {

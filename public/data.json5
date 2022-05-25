@@ -36,13 +36,13 @@
         name: "whoami",
         desc: [],
         md: "My name is Alexander Jacobsen, but people usually just call me Alex. I speak Danish, Swedish and English, but prefer digital languages such as Python. I'm generally a very happy person and extremely motivated to deep dive into new topics. \
-        \n\nI started programming when I was eight and haven't stopped since, having pressed every button I could reach and played with an abundance of software along the way. I believe communication is a must when working on a project together with others, meaning social events are a nice welcome. I almost always have three or four projects I’m working on in my spare time, but when I’m not in front of a computer I enjoy biking and climbing. ",
+        \n\nI started programming when I was eight and haven't stopped since, having pressed every button I could reach and played with an abundance of software along the way. I almost always have three or four projects on the side where I can play around with cool new tech. I believe communication is a must when working on a project together with others, meaning social events are a nice welcome. When I’m not in front of a computer, I'm either biking, climbing, singing or playing guitar.",
       },
       keys: {
         "LinkedIn": "https://www.linkedin.com/in/alexbmj01",
-        "ITU Email": "mailto:alja@itu.dk",
+        "Email": "mailto:business@alexbmj.com",
         "GitHub": "https://github.com/alexbmj",
-        "Email": "mailto:alexander.magno.jacobsen@gmail.com"
+        "Website": "https://alexbmj.com"
       },
     },
     {
@@ -106,7 +106,7 @@
           title: "Nordea Bank",
           subtitle: "Amagerbrogade 245, 2300 København",
           icon: "nordea.png",
-          date_from: 1430101010,
+          date_from: 1472680800,
           date_to: 1546297200,
           md: "*Student Assistant* \
           \n### This was my first part-time job where I gained real-world experience working in a company.",
@@ -127,8 +127,8 @@
           date_from: 1564610400,
           md:"*Junior Security Consultant* \
           \n### After high school I was able to go full-time for about a year, diving much deeper into Security Automation. Here is a breif list of projects: \
-          \n - ### Working with many tools such as Splunk, FireEye and Cortex XSOAR. \
-          \n - ### Modernizing many old security automation workflows and reporting tools. \
+          \n - ### Working with industry leading SIEM & SOAR platforms. \
+          \n - ### Modernizing old security automation workflows and reporting tools. \
           \n - ### Creating new tools to aid in critical incidents. \
           \n - ### Linux DevOps and Maintainance for automation scripts. \
           \n - ### Exploring OT of off-shore wind farms and deep-diving into PLC systems."

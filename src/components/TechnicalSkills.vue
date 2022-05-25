@@ -80,6 +80,12 @@
     })
 </script>
 
+<style>
+.ant-rate-star-second {
+  color: #6b6b6b40;
+}
+</style>
+
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
@@ -90,17 +96,22 @@
             border-collapse: collapse;
             width: 100%;
             max-width: 50rem; 
+            border-radius: 0.25em;
+            overflow: hidden;
         }
 
         th {
-            border: 0px solid rgb(227, 227, 227);
-            padding: 8px;
-            font-size: large;
+            font-family: 'Montserrat', sans-serif;
+            padding: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: #04AA6D;
+            color: white;
         }
 
-        td, th {
-            border: 0px solid rgb(227, 227, 227);
-            padding: 8px;
+        td {
+            padding: 4px;
         }
 
         .logo {
@@ -112,16 +123,12 @@
             width: 160px;
         }
 
-        tr:nth-child(even){background-color: #ebedf0;}
+        tr:nth-child(even){
+            background-color: rgb(231, 231, 231);
+        }
 
-        tr:hover {background-color: #e3882d88;}
-
-        th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #04AA6D;
-            color: white;
+        tr:hover {
+            background-color: rgba(4, 170, 109, 0.256);
         }
 
         .col {

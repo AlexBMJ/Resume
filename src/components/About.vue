@@ -137,7 +137,7 @@
 
             .keys-col {
                 margin: .5rem auto;
-                word-break: break-all;
+                word-break: normal;
                 padding-right: 1rem;
 
                 .key {
