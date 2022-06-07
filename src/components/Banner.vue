@@ -14,7 +14,7 @@
                 
             </div>
         </div>
-        <a data-aos="fade-in" class="scroll-next animated infinite bounce" draggable="false" href="#anchor-next" v-smooth-scroll>
+        <a data-aos="fade-in" data-aos-easing="ease-in-back" data-aos-delay="3000" class="scroll-next animate__animated animate__bounce animate__faster animate__infinite" draggable="false" href="#anchor-next" v-smooth-scroll>
             <double-right-outlined />
         </a>
     </div>
@@ -62,6 +62,7 @@
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
+    @import 'animate.css';
 
     .banner {
         display: flex;
@@ -165,6 +166,7 @@
             * {
                 transform: rotate(90deg);
             }
+            
         }
     }
 </style>
