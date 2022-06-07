@@ -38,7 +38,7 @@
         methods: {
             async runTyper() {
                 await new Promise(resolve => setTimeout(resolve, 1000));
-                let banner_typer = typer('.typer').empty().pause(1000).cursor(true);
+                let banner_typer = typer('.typer').empty().pause(250).cursor(true);
                 
                 this.getBanner.desc.forEach((line: string) => {
                     banner_typer.line(line);
@@ -46,6 +46,7 @@
                     banner_typer.back('all');
                 });
                 banner_typer.empty();
+                banner_typer.pause(3000);
                 banner_typer.repeat(Infinity);
             }
         },
