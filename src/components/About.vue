@@ -14,9 +14,9 @@
                 <Markdown data-aos="fade-in" style="max-width: 52rem; padding-top: 2rem;" :source="about.content.md"/>
                 <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
                     <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
-                           :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                           :xs="24" :sm="24" :md="12" :lg="24" :xl="12">
                         <span class="key">{{name}}:</span>
-                        <a class="value" v-if="isUrl(value)" :href="value" target="_blank">{{simplifyUrl( value )}}</a>
+                        <a class="value" v-if="isUrl(value)" :href="value" target="_blank" v-html="splitUrl(simplifyUrl(value))"></a>
                         <span v-else>{{value}}</span>
                     </a-col>
                 </a-row>
@@ -65,6 +65,17 @@
                     + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)$';
                 const re = new RegExp(strRegex);
                 return re.test(content);
+            },
+            splitUrl(url: string): String {
+                return url.split('//').map(str =>
+                    // Insert a word break opportunity after a colon
+                    str.replace(/(?<after>:)/giu, '$1<wbr>')
+                    // Before a single slash, tilde, period, comma, hyphen, underline, question mark, number sign, or percent symbol
+                    .replace(/(?<before>[/~.,\-_?#%])/giu, '<wbr>$1')
+                    // Before and after an equals sign or ampersand
+                    .replace(/(?<beforeAndAfter>[=&])/giu, '<wbr>$1<wbr>')
+                    // Reconnect the strings with word break opportunities after double slashes
+                ).join('//<wbr>')
             },
             simplifyUrl(url: string): string {
                 const strRegex = /^(((https|http|ftp|rtsp|mms|mailto):(\/\/)?)?(www\.)?)?/;
@@ -137,7 +148,10 @@
 
             .keys-col {
                 margin: .5rem auto;
-                word-break: normal;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-word;
+                hyphens: auto;
                 padding-right: 1rem;
 
                 .key {
@@ -151,7 +165,8 @@
                     color: inherit;
                     text-decoration: underline;
                     font-family: 'Ubuntu Mono', monospace;
-                    font-size: large;
+                    font-weight: normal;
+                    font-size: medium;
                 }
             }
         }
