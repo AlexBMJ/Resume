@@ -64,6 +64,17 @@
     })
 </script>
 
+<style>
+    .ant-layout-sider-dark {
+        background: white;
+    }
+
+    .ant-menu-item {
+        border-collapse: collapse;
+        border-radius: 0.5em;
+    }
+</style>
+
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
@@ -71,6 +82,7 @@
     .layout-menu {
         width: 100%;
         height: 100vh;
+        max-height: 100%;
         text-align: center;
         overflow: auto;
 
@@ -81,9 +93,9 @@
         .header {
             margin: 2rem auto;
             .avatar {
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
             }
 
             span {
@@ -97,7 +109,7 @@
 
         .menu {
             * {
-                font-size: 1em;
+                font-size: 1.1em;
             }
 
             a {
@@ -107,7 +119,8 @@
 
         .footer {
             padding: 10px;
-            margin-bottom: 3rem;
+            display: block;
+
             * {
                 color: $--color-gray;
             }
@@ -117,28 +130,15 @@
             }
         }
     
-        @media screen and (max-height: 285px) {
+        @media screen and (max-height: 325px) {
             .footer {
                 display: none;
             }
         }
-
-        @media screen and (min-height: 285px) {
-            .footer {
-                display: block;
-            }
-        }
-
 
         @media screen and (max-height: 550px) {
             .header {
                 display: none;
-            }
-        }
-
-        @media screen and (max-height: 350px) {
-            .footer {
-                margin-bottom: 0.5rem;
             }
         }
     }

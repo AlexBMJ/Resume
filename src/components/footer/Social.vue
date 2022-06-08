@@ -1,10 +1,6 @@
 <template>
     <div class="social" :style="{'font-size': size + 'em'}">
         <a :style="{color: color}" :href="getSocial['github']" target="_blank"><github-outlined /></a>
-        <!-- <a-popover arrowPointAtCenter>
-            <template slot="content"><img style="width: 360px; max-width: 80vw; height: auto;"  alt="林中小舍" src="../../assets/wechat.jpg"/></template>
-            <a :style="{color: color}"><a-icon type="wechat" /></a>
-        </a-popover> -->
         <a :style="{color: color}" :href="getSocial['twitter']" target="_blank"><twitter-outlined /></a>
         <a :style="{color: color}" :href="getSocial['linkedin']" target="_blank"><linkedin-outlined /></a>
     </div>
@@ -36,8 +32,17 @@ export default defineComponent({
 
 <style scoped lang="scss">
     .social {
+        animation-duration: 250ms;
         &>* {
             margin: 0.5em;
+        }
+
+        a {
+            transition: 250ms ease-in-out; 
+            opacity: 75%;
+        }
+        a:hover {
+            opacity: 100%; 
         }
     }
 </style>
