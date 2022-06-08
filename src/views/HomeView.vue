@@ -83,7 +83,7 @@
     .sider-menu-trigger {
         position: absolute;
         top: 20px;
-        z-index: 99999;
+        z-index: 1;
 
 
         &.drawer-closed {
@@ -91,7 +91,8 @@
         }
 
         &.drawer-open {
-            left: 276px;
+            left: -20px;
+            z-index: -1;
         }
     }
 
@@ -103,12 +104,12 @@
 
     @media screen and (min-width: $--screen-sm-min) {
         .sider-menu-trigger {
+            z-index: -1;
             display: none;
         }
 
         .layout-sider {
             box-shadow: 1px 0 5px #e0e0e0;
-            z-index: 999;
         }
     }
 </style>

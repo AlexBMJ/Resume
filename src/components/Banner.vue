@@ -156,7 +156,7 @@
             position: absolute;
             display: inline-block;
             width: 100%;
-            padding: 2rem 0;
+            padding: 1rem 0;
             bottom: 1vh;
             font-size: 1.5rem;
             color: $--font-color;
@@ -167,6 +167,14 @@
                 transform: rotate(90deg);
             }
             
+        }
+
+        @media screen and (max-height: 550px) {
+            .scroll-next {
+                * {
+                    transform: translatey(10em) rotate(90deg);
+                }
+            }
         }
     }
 </style>

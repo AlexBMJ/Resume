@@ -72,6 +72,7 @@
         width: 100%;
         height: 100vh;
         text-align: center;
+        overflow: auto;
 
         .header, .menu, .footer {
             background-color: white !important;
@@ -84,6 +85,7 @@
                 height: 80px;
                 line-height: 80px;
             }
+
             span {
                 display: block;
                 margin-top: .5rem;
@@ -105,13 +107,38 @@
 
         .footer {
             padding: 10px;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             * {
                 color: $--color-gray;
             }
 
             & > div {
-                margin: .5rem auto;
+                margin: 0.5rem auto;
+            }
+        }
+    
+        @media screen and (max-height: 285px) {
+            .footer {
+                display: none;
+            }
+        }
+
+        @media screen and (min-height: 285px) {
+            .footer {
+                display: block;
+            }
+        }
+
+
+        @media screen and (max-height: 550px) {
+            .header {
+                display: none;
+            }
+        }
+
+        @media screen and (max-height: 350px) {
+            .footer {
+                margin-bottom: 0.5rem;
             }
         }
     }
