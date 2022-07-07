@@ -1,4 +1,7 @@
 <template>
+    <head>
+        <meta name="description" content="The resume of Alexander Jacobsen, also known as AlexBMJ. This is a CV detailing my work life as software developer with a list of skills within information technology.">
+    </head>
     <div id="app">
         <router-view/>
     </div>

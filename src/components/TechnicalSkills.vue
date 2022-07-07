@@ -11,7 +11,7 @@
                     </tr>
                     <tr data-aos="fade-in" v-for="entry in entries">
                         <td style="font-size: large;">
-                        <img class="logo" draggable="false" :src="getImageUrl(entry.icon)">
+                        <img class="logo" draggable="false" :src="getImageUrl(entry.icon)" :alt="entry.name">
                         {{entry.name}}
                         </td>
                         <td class="score">

@@ -3,7 +3,7 @@
         <ModuleHeader :title="about.header.title" :sub-title="about.header.subtitle"/>
         <a-row type="flex" justify="center" align="top">
             <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
-                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/avatar_about.jpg"/>
+                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/avatar_about.jpg" alt=""/>
             </a-col>
             <a-col class="color-content col" :xs="24" :sm="24" :md="24" :lg="14" :xl="16">
                 <span data-aos="fade-in" class="title color-title">{{about.header.subtitle}}</span>

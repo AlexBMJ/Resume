@@ -7,7 +7,7 @@
             </div>
             <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
         </template>
-        <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)"></template>
+        <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)" :alt="card.title"></template>
         <Markdown :source="card.md"/>
     </a-card>
 </template>

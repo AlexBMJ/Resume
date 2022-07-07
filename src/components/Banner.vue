@@ -4,7 +4,7 @@
         <div data-aos="fade-in" class="bg"></div>
         <div data-aos="fade-in" class="desc">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
-                <img draggable="false" src="../assets/avatar.jpg">
+                <img draggable="false" src="../assets/avatar_thumb.jpg" alt="">
             </span>
             <div>
                 <h1>{{getBanner.title}}</h1>
@@ -91,7 +91,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: $--color-cyan url("../assets/bg_banner.png") no-repeat center center scroll;
+            background: $--color-cyan url("../assets/bg_banner_small.jpg") no-repeat center center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
