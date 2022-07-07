@@ -125,6 +125,7 @@
           subtitle: "Nesa Allé 1, 2820 Gentofte",
           icon: "orsted.png",
           date_from: 1564610400,
+          date_to: 1656626400,
           md:"*Junior Security Consultant* \
           \n### After high school I was able to go full-time for about a year, diving much deeper into Security Automation. Here is a breif list of projects: \
           \n - ### Working with industry leading SIEM & SOAR platforms. \
@@ -133,6 +134,14 @@
           \n - ### Linux DevOps and Maintainance for automation scripts. \
           \n - ### Exploring OT of off-shore wind farms and deep-diving into PLC systems."
         },
+        {
+          title: "Veo Technologies",
+          subtitle: "Rovsingsgade 68, 2100 København Ø",
+          icon: "veo.png",
+          date_from: 1660255200,
+          md:"*DevOps Engineer* \
+          \n### Creating and maintaining the software stack responsible for firmware testing."
+        }
       ],
       unicards: [
         {
