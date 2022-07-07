@@ -11,8 +11,10 @@
                     </tr>
                     <tr data-aos="fade-in" v-for="entry in entries">
                         <td style="font-size: large;">
-                        <img class="logo" draggable="false" :src="getImageUrl(entry.icon)" :alt="entry.name">
-                        {{entry.name}}
+                        <div class=logo-container>
+                            <img class="logo" draggable="false" :src="getImageUrl(entry.icon)" :alt="entry.name">
+                        </div>
+                        <div class="name-container">{{entry.name}}</div>
                         </td>
                         <td class="score">
                             <a-rate :value="entry.score" character="⬤" disabled /> 
@@ -89,6 +91,7 @@
 <style scoped lang="scss">
     @import '../styles/variable';
     @import '../styles/main';
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
     .skills {
         table {
@@ -101,17 +104,31 @@
         }
 
         th {
-            font-family: 'Montserrat', sans-serif;
-            padding: 1rem;
-            font-weight: 500;
+            font-family: 'Montserrat', Helvetica, sans-serif;
+            // font-size: 90%;
+            padding: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             background-color: #04AA6D;
             color: white;
         }
 
         td {
             padding: 4px;
+        }
+
+        .logo-container {
+            position: fixed;
+        }
+
+        .name-container {
+            font-family: 'Montserrat', Helvetica, sans-serif;
+            font-size: medium;
+            font-weight: 400;
+            flex: content;
+            padding-left: 12mm;
+            min-height: 8mm;
         }
 
         .logo {
@@ -121,6 +138,8 @@
 
         .score {
             width: 160px;
+            justify-self: right;
+            justify-content: right;
         }
 
         tr:nth-child(even){

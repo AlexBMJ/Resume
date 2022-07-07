@@ -8,7 +8,7 @@
             <span v-if="!!card.subtitle" class="sub-title">{{card.subtitle}}</span>
         </template>
         <template #extra><img width="50" draggable="false" :src="getImageUrl(card.icon)" :alt="card.title"></template>
-        <Markdown :source="card.md"/>
+        <Markdown class="markdown-content" :source="card.md"/>
     </a-card>
 </template>
 
@@ -63,6 +63,7 @@ export default defineComponent({
         .time-period {
             font-size: .85rem;
             padding-top: 0.34rem;
+            padding-right: 0.5rem;
             margin: 0;
         }
 
@@ -72,6 +73,10 @@ export default defineComponent({
             color: lightslategrey;
             display: block;
             margin-top: .2rem;
+        }
+
+        .markdown-content {
+            font-size: 0.8em;
         }
     }
     .keys-row {
