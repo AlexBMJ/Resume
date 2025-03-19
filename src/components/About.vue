@@ -97,8 +97,8 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/variable';
+    @use '../styles/main';
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
 
     .about {
@@ -134,7 +134,7 @@
             margin: 1rem auto;
         }
 
-        @media screen and (max-width: $--screen-md-min) {
+        @media screen and (max-width: variable.$screen-md-min) {
             .col {
                 padding: 0;
                 &.color-content {

@@ -10,8 +10,7 @@ function find_module(modules: Module[], id: string) {
     return find((module) => module.anchor.id === id, modules) || DEFAULT_MODULE;
 }
 
-export const mainStore = defineStore({
-    id: 'mainStore',
+export const mainStore = defineStore('mainStore', {
     state: (): UserData => ({
         title: DEFAULT_TITLE,
         social: {},

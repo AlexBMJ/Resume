@@ -67,7 +67,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
+    @use '../styles/variable';
 
     .layout-header {
         z-index: 0;
@@ -96,13 +96,13 @@
         }
     }
 
-    @media screen and (max-width: $--screen-sm-min) {
+    @media screen and (max-width: variable.$screen-sm-min) {
         .layout-sider {
             display: none;
         }
     }
 
-    @media screen and (min-width: $--screen-sm-min) {
+    @media screen and (min-width: variable.$screen-sm-min) {
         .sider-menu-trigger {
             z-index: -1;
             display: none;

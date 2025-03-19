@@ -76,8 +76,8 @@
 </style>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/variable';
+    @use '../styles/main';
 
     .layout-menu {
         width: 100%;
@@ -103,7 +103,7 @@
                 margin-top: .5rem;
                 font-size: 1.2em;
                 font-weight: 500;
-                color: $--color-gray;
+                color: variable.$color-gray;
             }
         }
 
@@ -122,7 +122,7 @@
             display: block;
 
             * {
-                color: $--color-gray;
+                color: variable.$color-gray;
             }
 
             & > div {

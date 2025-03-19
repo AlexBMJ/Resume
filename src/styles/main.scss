@@ -1,4 +1,4 @@
-@import "variable";
+@use "variable";
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
@@ -6,8 +6,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   &::selection {
-    background: $--selection-color;
-    color: $--font-color;
+    background: variable.$selection-color;
+    color: variable.$font-color;
   }
 
   ::-webkit-scrollbar {
@@ -26,7 +26,7 @@ body {
   text-align: left;
 }
 
-@media screen and (max-width: $--screen-xs-min) {
+@media screen and (max-width: variable.$screen-xs-min) {
   .content {
     padding: 0.5rem;
     text-align: left;
@@ -74,16 +74,16 @@ body {
   padding: 1rem !important;
 
   a {
-    color: $--color-gray;
+    color: variable.$color-gray;
   }
 
   .ant-menu-item {
-    border-bottom: 1px dotted $--color-gray;
+    border-bottom: 1px dotted variable.$color-gray;
     background: transparent !important;
-    color: $--color-gray !important;
+    color: variable.$color-gray !important;
     .ant-menu-item-selected {
       background: transparent !important;
-      color: $--color-gray !important;
+      color: variable.$color-gray !important;
     }
   }
 }
@@ -97,9 +97,9 @@ body {
 }
 
 .color-title {
-  color: $--color-title;
+  color: variable.$color-title;
 }
 
 .color-content {
-  color: $--color-content;
+  color: variable.$color-content;
 }

@@ -21,5 +21,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-    @import '../../styles/variable';
+    @use '../../styles/variable';
 </style>

@@ -5,21 +5,25 @@
             <a-col class="keys-col spacing" justify="left" v-for="(entries,topic) in skills.skills.topics" 
             :xs="35" :sm="35" :md="35" :lg="35" :xl="12">
                 <table>
-                    <tr data-aos="fade-in">
-                        <th>{{topic}}</th>
-                        <th>Proficiency</th>
-                    </tr>
-                    <tr data-aos="fade-in" v-for="entry in entries">
-                        <td style="font-size: large;">
-                        <div class=logo-container>
-                            <img class="logo" draggable="false" :src="getImageUrl(entry.icon)" :alt="entry.name">
-                        </div>
-                        <div class="name-container">{{entry.name}}</div>
-                        </td>
-                        <td class="score">
-                            <a-rate :value="entry.score" character="⬤" disabled /> 
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr data-aos="fade-in">
+                            <th>{{topic}}</th>
+                            <th>Proficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-aos="fade-in" v-for="entry in entries">
+                            <td style="font-size: large;">
+                            <div class=logo-container>
+                                <img class="logo" draggable="false" :src="getImageUrl(entry.icon)" :alt="entry.name">
+                            </div>
+                            <div class="name-container">{{entry.name}}</div>
+                            </td>
+                            <td class="score">
+                                <a-rate :value="entry.score" character="⬤" disabled /> 
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </a-col>
         </a-row>
@@ -89,8 +93,8 @@
 </style>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/variable';
+    @use '../styles/main';
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
     .skills {
@@ -194,7 +198,7 @@
             }
         }
 
-        @media screen and (max-width: $--screen-md-min) {
+        @media screen and (max-width: variable.$screen-md-min) {
             .col {
                 padding: 0;
                 &.color-content {
@@ -207,7 +211,7 @@
             }
         }
 
-        @media screen and (max-width: $--screen-lg-min) {
+        @media screen and (max-width: variable.$screen-lg-min) {
             .spacing {
                 padding-right: 0rem;
             }

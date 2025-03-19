@@ -60,8 +60,8 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/variable';
+    @use '../styles/main';
     @import 'animate.css';
 
     .banner {
@@ -91,7 +91,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: $--color-cyan url("../assets/bg_banner_small.jpg") no-repeat center center scroll;
+            background: variable.$color-cyan url("../assets/bg_banner_small.jpg") no-repeat center center scroll;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -104,9 +104,9 @@
             h1 {
                 display: block;
                 margin-top: 45vh;
-                color: $--font-color;
+                color: variable.$font-color;
                 font-size: 2em;
-                text-shadow: 0 0 5px $--color-gray;
+                text-shadow: 0 0 5px variable.$color-gray;
             }
         }
 
@@ -116,7 +116,7 @@
             * {
                 display: block;
                 margin: auto;
-                color: $--font-color;
+                color: variable.$font-color;
                 text-shadow: 0 0 5px rgba(0, 0, 0, .5);
             }
 
@@ -141,7 +141,7 @@
                 }
             }
 
-            @media screen and (max-width: $--screen-sm-min) {
+            @media screen and (max-width: variable.$screen-sm-min) {
                 h1 {
                     font-size: 2.3em;
                 }
@@ -159,7 +159,7 @@
             padding: 1rem 0;
             bottom: 1vh;
             font-size: 1.5rem;
-            color: $--font-color;
+            color: variable.$font-color;
             animation-duration: 2s;
             animation-delay: 1s;
 

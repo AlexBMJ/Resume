@@ -39,8 +39,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-    @import '../../styles/variable';
-    @import '../../styles/main';
+    @use '../../styles/variable';
+    @use '../../styles/main';
 
     .experience-card {
         .title {

@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+import 'ant-design-vue/dist/reset.css';
 import Markdown from 'vue3-markdown-it';
 import VueSmoothScroll from 'v-smooth-scroll';
 import AOS from 'aos';

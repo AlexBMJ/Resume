@@ -53,8 +53,8 @@
 </style>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/variable';
+    @use '../styles/main';
 
     .col {
         padding: 0 1rem;
@@ -65,7 +65,7 @@
     }
 
 
-    @media screen and (max-width: $--screen-sm-min) {
+    @media screen and (max-width: variable.$screen-sm-min) {
         .col {
             padding: 0;
             min-width: 18rem;
@@ -81,7 +81,7 @@
         }
     }
     
-    @media screen and (max-width: $--screen-lg-min) and (min-width: $--screen-sm-min) {
+    @media screen and (max-width: variable.$screen-lg-min) and (min-width: variable.$screen-sm-min) {
         .col {
             padding: 0;
             min-width: 25rem;

@@ -28,8 +28,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../styles/variable';
-    @import '../styles/main';
+    @use '../styles/main';
 
     .footer {
         &>div{
