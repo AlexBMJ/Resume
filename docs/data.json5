@@ -60,8 +60,9 @@
         topics: {
           "Languages": [
             {name:"Python", score:5, icon:"python.svg"},
+            {name:"Rust", score:4, icon:"rust.svg"},
             {name:"C#", score:5, icon:"csharp.svg"},
-            {name:"C/C++", score:3, icon:"cpp.svg"},
+            {name:"C/C++", score:4, icon:"cpp.svg"},
             {name:"Java", score:5, icon:"java.svg"},
             {name:"Go", score:3, icon:"go.svg"},
             {name:"F#", score:2, icon:"fsharp.svg"},
@@ -73,7 +74,8 @@
           ],
           "Technical Environments": [
             {name:"Windows", score:5, icon:"windows.svg"},
-            {name:"Linux (*nix)", score:5, icon:"linux.svg"},
+            {name:"Linux", score:5, icon:"linux.svg"},
+            {name:"Yocto", score:5, icon:"yocto.svg"},
             {name:"Docker", score:5, icon:"docker.svg"},
             {name:"Git", score:5, icon:"git.svg"},
             {name:"GitHub CI/CD", score:4, icon:"github.svg"},
@@ -139,8 +141,20 @@
           subtitle: "Rovsingsgade 68, 2100 København Ø",
           icon: "veo.png",
           date_from: 1660255200,
-          md:"*DevOps Engineer* \
-          \n### Creating and maintaining the software stack responsible for firmware testing."
+          date_to: 1690840800,
+          md:"*Software Tooling & DevOps Engineer* \
+          \n### Creating and maintaining the software stack responsible for hardware and firmware testing. \
+          \n### The stack consists of Python & Rust based test frameworks, deployed using reproducable NixOS configurations."
+        },
+        {
+          title: "Veo Technologies",
+          subtitle: "Rovsingsgade 68, 2100 København Ø",
+          icon: "veo.png",
+          date_from: 1690840800,
+          md:"*Firmware Engineer* \
+          \n### Development and Maintenance of the firmware running on the Veo Cameras. \
+          \n### The stack consists of C/C++ for system utils and drivers, coupled with Python & Rust user applications, covering everything from mobile facing bluetooth services to GStreamer video pipelines. \
+          \n### The firmware is built for Poky Linux and packaged using Yocto, and is heavily customized to fit the given hardware."
         }
       ],
       unicards: [
@@ -149,18 +163,28 @@
           subtitle: "Rued Langgaards Vej 7, 2300 København",
           icon: "itu.png",
           date_from: 1597874400,
+          date_to: 1690840800,
           md: "*Bachelor's degree in Software Development* \
-          \n ### I am currently undertaking a bachelor's degree in the field of computer science at ITU. \
           \n ### Courses: \
-          \n - ### Introduction to Programming (Autumn 2020) \
-          \n - ### Discrete Mathematics BSc (Autumn 2020) \
+          \n - ### Introductory Programming (Autumn 2020) \
+          \n - ### Discrete Mathematics (Autumn 2020) \
           \n - ### Project work and Communication (Autumn 2020) \
-          \n - ### Algorithms and Data Structures, MSc (Spring 2021) \
+          \n - ### Algorithms and Data Structures (Spring 2021) \
+          \n - ### Systematic Design of User Interfaces (Spring 2021) \
           \n - ### First-year Project: Visualization, Navigation, Searching, and Route Planning (Spring 2021) \
-          \n - ### UX and Interface Design (Spring 2021) \
-          \n - ### Introduction to Database Systems, SWU (Autumn 2021) \
-          \n - ### DevOps, Software Evolution and Software Maintenance, BSc (Spring 2022) \
-          \n - ### Second Year Project: Software Development in Large Teams (Spring 2022)",
+          \n - ### Introduction to Database Systems (Autumn 2021) \
+          \n - ### Distributed Systems (Autumn 2021) \
+          \n - ### Analysis, Design and Software Architecture (Autumn 2021) \
+          \n - ### DevOps, Software Evolution and Software Maintenance (Spring 2022) \
+          \n - ### Second Year Project: Software Development in Large Teams (Spring 2022) \
+          \n - ### Functional Programming (Spring 2022) \
+          \n - ### Programs as Data (Autumn 2022) \
+          \n - ### Operating Systems and C (Autumn 2022) \
+          \n - ### Security (Autumn 2022) \
+          \n - ### Digital Transformation and Business Models (Autumn 2022) \
+          \n - ### Reflections on IT (Spring 2023) \
+          \n - ### Introduction to Artifical Intelligence (Spring 2023) \
+          \n - ### Bachelor Project: Using machine learning to recognize numbers spoken in Danish (Spring 2023)"
         },
       ],
     }

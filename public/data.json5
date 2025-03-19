@@ -144,7 +144,7 @@
           date_to: 1690840800,
           md:"*Software Tooling & DevOps Engineer* \
           \n### Creating and maintaining the software stack responsible for hardware and firmware testing. \
-          \n### The stack consists of Python & Rust based test frameworks, deployed to reproducable NixOS systems."
+          \n### The stack consists of Python & Rust based test frameworks, deployed using reproducable NixOS configurations."
         },
         {
           title: "Veo Technologies",
@@ -152,7 +152,7 @@
           icon: "veo.png",
           date_from: 1690840800,
           md:"*Firmware Engineer* \
-          \n### Development and Maintainance of the firmware running on the Veo Cameras. \
+          \n### Development and Maintenance of the firmware running on the Veo Cameras. \
           \n### The stack consists of C/C++ for system utils and drivers, coupled with Python & Rust user applications, covering everything from mobile facing bluetooth services to GStreamer video pipelines. \
           \n### The firmware is built for Poky Linux and packaged using Yocto, and is heavily customized to fit the given hardware."
         }
@@ -176,7 +176,7 @@
           \n - ### Distributed Systems (Autumn 2021) \
           \n - ### Analysis, Design and Software Architecture (Autumn 2021) \
           \n - ### DevOps, Software Evolution and Software Maintenance (Spring 2022) \
-          \n - ### Second Year Project: Software Development in Large Teams (Spring 2022)",
+          \n - ### Second Year Project: Software Development in Large Teams (Spring 2022) \
           \n - ### Functional Programming (Spring 2022) \
           \n - ### Programs as Data (Autumn 2022) \
           \n - ### Operating Systems and C (Autumn 2022) \
