@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
+    "@rollup/pluginutils": "^5.1.4",
     "@types/markdown-it": "^14.1.2",
     "animate.css": "^4.1.1",
     "ant-design-vue": "^4.2.6",
